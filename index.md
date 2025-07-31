@@ -23,15 +23,15 @@ The first task is to gather the map and cross-section imagery. While the map was
 The image below is a screen capture of the geologic map from Staisch et al. 2018. It was captured from the pdf using MacOS' Preview application and exported as a .png file, then georeferenced using [QGIS's Georeferencer tool][qgis_georeferencer], and saved as a geotiff.
 
 
-![Map of the Yakima Folds](/images/staisch_2018_map.png) *Geologic
+![Map of the Yakima Folds]({{ site.baseurl }}/images/staisch_2018_map.png) *Geologic
 Map of the Yakima Folds Province*
 
 Below that are two cross-sections, A-A' and B-B'. These are just screen caps, without any other information.
 
-![Cross-Section A-A'](/images/staisch_2018_a-a_prime.png)
+![Cross-Section A-A']({{ site.baseurl }}/images/staisch_2018_a-a_prime.png)
 *Cross-Section A-A'*
 
-![Cross-Section B-B'](/images/staisch_2018_b-b_prime.png)
+![Cross-Section B-B']({{ site.baseurl }}/images/staisch_2018_b-b_prime.png)
 *Cross-Section B-B'*
 
 You can just save these to your hard drive and get to work georeferencing.
@@ -44,7 +44,7 @@ pass
 
 Now that we have the data, first we'll load the map into QGIS. We'll also have a DEM to get the elevations of the points on the surface trace. This is something that you can find for yourself; just make sure the elevations are in meters. It's probably also important for the [CRS] of the DEM to be in EPSG:4326 (WGS84). However, we don't need to have the QGIS map in EPGS:4326, because at this latitude, there is substantial distortion, so I'm changing it to EPSG:3857, which is a nice projected coordinate system for many tasks.
 
-![map loaded](/images/qgis_map_loaded.png)
+![map loaded]({{ site.baseurl }}/images/qgis_map_loaded.png)
 
 ## Step 2: Georeferencing the cross-section and digitizing the fault data
 
@@ -53,7 +53,7 @@ Now that we have the data, first we'll load the map into QGIS. We'll also have a
 
 The next step is to open the Cross-Section Digitizer plugin. It will probably load as a panel on the right side of the QGIS main window. Depending on your screen real estate and preferences, you can leave it here or detach it.
 
-![Cross-section digitizer loaded](/images/qgis_xsd_loaded.png)
+![Cross-section digitizer loaded]({{ site.baseurl }}/images/qgis_xsd_loaded.png)
 
 Now, we want to digitize the A-A' cross-section, so click on the 'Load Image' button under the headline '__Plot Image__', and select `staisch_2018_a-aprime.png`. It will display in the window at the top.
 
@@ -63,15 +63,15 @@ The next step is to make a Plot Coordinate Reference system, which is based on t
 
 Click on the 'Set Origin (X,Y)' button, then move your mouse up to the image. You'll see a little cross for the cursor. Then, pick a handy point such as the lower left corner of the cross-section, and click as accurately as possible on it. Note that you can zoom with the mouse wheel, and click 'Pan' in the menu bar on the top to move the image around and 'Digitize' to go back to clicking points.
 
-![origin pt](/images/origin_pt.png)
+![origin pt]({{ site.baseurl }}/images/origin_pt.png)
 
 I clicked here on the lower left point. Then, I fill in the X and Y fields with the cross-section values. The X value is 0 (km), but the Y value is 10; this is depth, but we want a positive-up system so I'll put -10 in the box.
 
 Then, I did the same for the X reference point--I clicked at the '20 km' tick. Note that the Y/Z value isn't used, so you just have to get the X value right. Then fill in the box with 20. Then do the same for the Y value, making sure to make the value have the opposite sign as in the cross-section if the values are depths.
-![alt text](/images/x_pt.png)
+![alt text]({{ site.baseurl }}/images/x_pt.png)
 *X value*
 
-![alt text](/images/y_pt.png)
+![alt text]({{ site.baseurl }}/images/y_pt.png)
 *Y value*
 
 Once you have the 3 point set, that is enough to make a coordinate transformation. Just click 'Validate.' If the values are all filled in (not to say correct), you'll get a happy message. Also, the blue 'Plot X' and 'Plot Z' values will be filled in as you move your mouse around the cross-section, which is useful when digitizing points.
@@ -84,16 +84,16 @@ Click on the 'Georeference' tab below the plot. We're going to click on two poin
 
 Click on 'Click Start Point on Plot' and then click the start point on the plot. This should be one end of the plot (I went left) in terms of the X value, since that will be tied to the end point of the cross-section on the map. The Z value can be anything, but pay attention to it. In my click the Z value was 0.002, which corresponds to an elevation of 2 m.
 
-![start point](/images/start_pt.png)
+![start point]({{ site.baseurl }}/images/start_pt.png)
 *Start point*
 
 Then, do the same for the end point.
-![alt text](/images/end_pt.png)
+![alt text]({{ site.baseurl }}/images/end_pt.png)
 *End point*
 
 Now, click on the 'Click on Map for Start Point', and click on the end of the cross-section at A' since that corresponds to the Start Point on the plot (if the map isn't in WGS84 coordinates you'll get a friendly message which you can ignore). This will fill in the longitude and latitude of the point in the boxes. However, it won't fill in the Elevation value so you'll get that from the Z value above. We had 'Z=0.002' (in km) which is 2 m, so we'll enter 2.0 for the elevation.
 
-![alt text](/images/map_start_point.png)
+![alt text]({{ site.baseurl }}/images/map_start_point.png)
 
 Then do the same for the map end point. I had a value of Z=-0.001 so I will use -1.0 m for the elevation.
 
@@ -107,11 +107,11 @@ This was a bit of tedious work, and we don't want to have to re-do it every time
 
 The next thing to do is to see the cross-section vertically, in 3d, in all its glory. First, open the Qgis2threejs Exporter. Then, click on the box to show the polygon, which is probably called 'Cross_Section_Polygon'. This will show the polygon with the color it has in the map window. In order to show the image, right click on the item in the menu, and click on the little triangle next to the blank field for the 'Texture Image' field. Then, select 'image_path' which is an attribute of the polygon layer, which contains the location of the cross-section image (not the polygon) on your computer. Then hit 'Apply' and check to see that it's oriented correctly. If it's backwards (so that A on the cross-section matches with A' on the map) then click the 'Reverse UV Mapping' box.
 
-![alt text](/images/texture.png)
+![alt text]({{ site.baseurl }}/images/texture.png)
 
 If everything went well, you should be able to see the cross-section like this:
 
-![alt text](/images/cross-section_3d_view.png)
+![alt text]({{ site.baseurl }}/images/cross-section_3d_view.png)
 
 ### Digitizing the fault data
 
@@ -123,11 +123,11 @@ Though it is possible to build geometries for all of these faults, we'll limit o
 
 To do this, we'll go back to the Cross-Section Digitizer plugin; this time, we'll use the 'Digitize' tab. First, we need to name the new Data Series, so type 'Umtanum A' in the box, and hit 'New Series'. Then, we'll start clicking on important points on the fault; these are basically the hinge points, where the fault dip changes. Note that when you use a mouse, you can zoom in and out with the wheel; it's much, much easier with a mouse than the trackpad. Click 'Start Digitizing Points' and just go for it. When you click, points will be added to the list. You can delete them if you click in the wrong place.
 
-![alt text](/images/x_sec_pts.png)
+![alt text]({{ site.baseurl }}/images/x_sec_pts.png)
 
 Then, once you're satisfied, you can go to the 'Georeference' tab in the plugin window, and click 'Georeference Digitized Points'. This uses the information already provided to map coordinates from cross-section space to geographic space, so we don't have to do that again. Instead, the points will appear in the map window, as a new point layer. To make the useful, we'll label the points by their elevation (z value) so that we can see them in the map. Go to the 'Properties' for the layer, hit 'Single Labels', click on the 'Expression' button (the curly E) and then enter `round(z(@geometry))`, which fetches and formats the elevations from the points' geometries. Format the text so you can easily read on your screen.
 
-![alt text](/images/pt_label.png)
+![alt text]({{ site.baseurl }}/images/pt_label.png)
 
 It's also a good time to save the work. You can save the project again as discussed above, and it will preserve the points clicked. However the georeferenced points in the map window won't be saved. They can be trivially exported again by hitting the Georeference Digitize Points button, but the points layer can also be saved from the QGIS layers menu.
 
@@ -165,13 +165,13 @@ Also, pay attention to the direction you click when you're digitizing. I tend to
 
 Now, open the Processing Toolbox, and then click on the yellow button on the top that is the 'Edit Features In-Place' button.
 
-![edit features in place](/images/edit_features_in_place.png)
+![edit features in place]({{ site.baseurl }}/images/edit_features_in_place.png)
 
 Then, use the 'Select Features' button to select the fault trace.
 
 Then, go back to the Processing Toolbox and type 'drape' in the Search bar. Select the DEM that you want to use from the Raster field (it will appear if it's loaded, otherwise you'll have to dig one up from your hard drive or a floppy disk). As long as the feature is selected, there should be a 'Modify Selected Features' button in the lower right. Click it.
 
-![drape](/images/drape.png)
+![drape]({{ site.baseurl }}/images/drape.png)
 
 Then, de-select that feature.
 
@@ -183,17 +183,17 @@ After you finish each feature, you can fill in the 'elev' field with the elevati
 
 After you draw a contour, then assign an elevation value to all of the vertices in it. Unlike using the 'Drape' tool earlier (which assigns a value to each vertex based on the closest DEM value), we'll assign a single value to all vertices. Select the contour, then search for the 'Set Z value' in the Processing toolbox. Then give it the right elevation, and hit 'Modify Selected Features'.
 
-![Set Z value](/images/set_z_val.png)
+![Set Z value]({{ site.baseurl }}/images/set_z_val.png)
 
 Once you've done this for at least one feature, it is wise to save the contours to a geojson file.
 
 As long as the contours have Z values, you can also load them up into the Qgis2threejs plugin and see them plotted with the cross-sections. Note that if the map is zoomed in too far (in the main QGIS window) then sometimes the points are given a zero elevation. Don't ask me why.
 
-![3d contours](/images/contour_3d.png)
+![3d contours]({{ site.baseurl }}/images/contour_3d.png)
 
 Once you're done, you'll have a lot of contours. As is evident based on the cross-sections, there are subtle differences in structure in the cross-sections that are manifest in non-parallel contour lines. Thus, we can't simply project the trace down to depth like we could with less information.
 
-![umtanum contours](/images/umtanum_contours.png)
+![umtanum contours]({{ site.baseurl }}/images/umtanum_contours.png)
 
 Specifically, it's clear that the Umtanum fault in the B-B' cross-section is a bit steeper up top but then flattens out quite a bit between 1-2 km depth, but the A-A' cross-section shows a more planar fault.
 
@@ -203,15 +203,15 @@ Now, it's time to mesh the fault, making a 3D surface composed of triangles shar
 
 Click on the 'Generate 3D Surface from Contours' plugin. Select the 'umtanum_contours' layer, then name the fault. Change the point spacing if you want (this is the approximate edge length of the triangles). The contours should show up in the order specified by the 'elev' field, but you should check based on the names to make sure it's correct. Note that this time, the trace (Elevation: None) appeared at the bottom of the list. It is the top, so it needs to be moved to the top of the list. There are buttons to move items up and down, and to remove items from the list, on the right. There are also check boxes that you can uncheck to remove contours from the mesh, without removing them from the list (if that's what you want to do). By default, the plugin makes a temporary file that is loaded into the QGIS window, but you can also save to a file by specifying something here. Hit 'Run' when you're satisfied.
 
-![mesh the Umtanum contours](/images/mesh_contours.png)
+![mesh the Umtanum contours]({{ site.baseurl }}/images/mesh_contours.png)
 
 We've got a mesh! If you like it, close the plugin.
 
-![Umtanum mesh map](/images/umtanum_mesh_map.png)
+![Umtanum mesh map]({{ site.baseurl }}/images/umtanum_mesh_map.png)
 
 You can also see the mesh in the Qgis2threejs window:
 
-![Umtanum mesh 3d](/images/umtanum_mesh_3d.png)
+![Umtanum mesh 3d]({{ site.baseurl }}/images/umtanum_mesh_3d.png)
 
 If it comes up clear when you load it, you have to clear the 'Texture image' field and hit 'Ok'. Not sure why...
 
@@ -225,13 +225,13 @@ Now, it's time to draw the backthrust. This fault is inferred on the surface wit
 
 In order to make it merge seamlessly across its length, make the branch line at that depth for its whole breadth. The easiest way to do that is by copying the -713 m contour from the Umtanum fault and then renaming it. Then filter the layer by name (use a filter like `"name" LIKE 'umtanum_backthrust%'` so only the backthrust is visible. After you have all of the contours drawn, trim along strike.
 
-![backthrust contours](/images/backthrust_contours.png)
+![backthrust contours]({{ site.baseurl }}/images/backthrust_contours.png)
 
 Then, mesh the backthrust with the plugin, and look at it in 2D and 3D to assess.
 
-![Both faults](/images/both_faults_1.png)
+![Both faults]({{ site.baseurl }}/images/both_faults_1.png)
 
-![Both faults](/images/both_faults_2.png)
+![Both faults]({{ site.baseurl }}/images/both_faults_2.png)
 
 If you're satisfied with the geometries, you're good to go! Save the files to your format of preference, and move along with your life!
 
