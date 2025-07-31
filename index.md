@@ -1,6 +1,7 @@
 ---
-title: Making 3D fault geometries from cross-sections
-slug: yfp-3d-tutorial
+layout: default
+title: ""
+description: ""
 ---
 <style>
   header.site-header {
@@ -12,7 +13,7 @@ slug: yfp-3d-tutorial
     <a href="https://cascadiaquakes.org" style="text-decoration: none;">
       <img src="images/Crescent_Logo.png" alt="CRESCENT Logo" style="height:40px; vertical-align: middle;">
     </a>
-    <span style="font-size: 1.4em; font-weight: bold;">CRESCENT QGIS Plugin Tutorial</span>
+    <span style="font-size: 1.4em; font-weight: bold;">Making 3D fault geometries from cross-sections</span>
   </div>
   <div>
     <a href="https://www.nsf.gov/" style="text-decoration: none;">
