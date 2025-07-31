@@ -1,4 +1,15 @@
-theme: jekyll-theme-slate
-title: ""
-description: ""
+title: "CRESCENT QGIS Plugin Tutorial"
+description: "Generate 3D fault geometries from cross-section data"
+theme: just-the-docs
 
+# Optional: If hosted at something like /fault-geometry-building-tutorial/
+# url: https://cascadiaquakes.github.io
+# baseurl: /fault-geometry-building-tutorial
+
+just_the_docs:
+  heading_anchors: true
+  search_enabled: true
+  # Optional: Add GitHub link to sidebar
+  aux_links:
+    View on GitHub:
+      - https://github.com/cascadiaquakes/fault-geometry-building-tutorial

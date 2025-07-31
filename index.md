@@ -1,26 +1,13 @@
 ---
 layout: default
-title: ""
-description: ""
+title: "Making 3D Fault Geometries from Cross-sections"
+nav_order: 1
 ---
-<style>
-  /* Hide default GitHub Pages header */
-  #header_wrap,
-  header.inner,
-  #project_title,
-  #project_tagline,
-  #forkme_banner {
-    display: none !important;
-  }
 
-  /* Force your custom header to break free from the inner wrapper */
-  .custom-full-header {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
+<style>
+/* Custom full-width header layout for Just the Docs */
+.custom-full-header {
+  width: 100%;
   background-color: rgb(0, 79, 89);
   padding: 10px 20px;
   display: flex;
@@ -29,56 +16,38 @@ description: ""
   color: white;
 }
 
-   .custom-full-header img {
-     height: 55px;
-     border: none;
-     background: none;
-     box-shadow: none;
-   }
-   
-   .header-center {
-     flex: 1;
-     text-align: center;
-     font-size: 1.4em;
-     font-weight: bold;
-     color: white;
-   }
-   
-   .header-left, .header-right {
-     flex: 0 0 auto;
-   }
+.custom-full-header img {
+  height: 55px;
+  margin: 0;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
 
-  /* Optional: widen content area too */
-  .wrapper {
-    max-width: none;
-    width: 100%;
-    padding: 0 40px;
-  }
-
-  main.page-content {
-    max-width: 1200px;
-    margin: auto;
-  }
+.custom-header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+}
 </style>
 
 <div class="custom-full-header">
-  <div class="header-left">
-    <a href="https://cascadiaquakes.org">
-      <img src="images/Crescent_Logo.png" alt="CRESCENT Logo" />
-    </a>
+  <a href="https://cascadiaquakes.org">
+    <img src="images/Crescent_Logo.png" alt="CRESCENT Logo" />
+  </a>
+  <div class="custom-header-title">
+    Making 3D Fault Geometries from Cross-sections
   </div>
-  <div class="header-center">
-    <span>Making 3D Fault Geometries from Cross-sections</span>
-  </div>
-  <div class="header-right">
-    <a href="https://www.nsf.gov/">
-      <img src="images/USNSF_Logo.png" alt="NSF Logo" />
-    </a>
-  </div>
+  <a href="https://www.nsf.gov/">
+    <img src="images/USNSF_Logo.png" alt="NSF Logo" />
+  </a>
 </div>
 
-This tutorial describes how to create complex 3d fault geometries from geologic map and cross-section data using QGIS, with some plugins created for this purpose.
+---
 
+This tutorial describes how to create complex 3D fault geometries from geologic map and cross-section data using QGIS, with custom plugins created specifically for this purpose.
 In this tutorial, we will use data (geologic mapping and cross-sections) from [a 2018 paper on the Yakima Folds Province by Lydia Staisch][staisch_2018].
 
 There are 3 steps to this process:
