@@ -4,6 +4,7 @@ title: ""
 description: ""
 ---
 <style>
+  /* Hide default GitHub Pages header */
   #header_wrap,
   header.inner,
   #project_title,
@@ -12,7 +13,29 @@ description: ""
     display: none !important;
   }
 
-  /* Make content area wider */
+  /* Force your custom header to break free from the inner wrapper */
+  .custom-full-header {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    background-color: rgb(0, 79, 89);
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+  }
+
+   .custom-full-header img {
+     border: none;
+     box-shadow: none;
+     background: none;
+   }
+
+  /* Optional: widen content area too */
   .wrapper {
     max-width: none;
     width: 100%;
@@ -25,12 +48,12 @@ description: ""
   }
 </style>
 
-<div style="background-color: rgb(0,79,89); padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; color: white;">
+<div class="custom-full-header">
   <div style="display: flex; align-items: center; gap: 15px;">
     <a href="https://cascadiaquakes.org" style="text-decoration: none;">
       <img src="images/Crescent_Logo.png" alt="CRESCENT Logo" style="height:40px; vertical-align: middle;">
     </a>
-    <span style="font-size: 1.4em; font-weight: bold;">Making 3D fault geometries from cross-sections</span>
+    <span style="font-size: 1.4em; font-weight: bold;">Making 3D Fault Geometries from Cross-sections</span>
   </div>
   <div>
     <a href="https://www.nsf.gov/" style="text-decoration: none;">
