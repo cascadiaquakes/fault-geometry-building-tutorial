@@ -2,7 +2,11 @@
 title: Making 3D fault geometries from cross-sections
 slug: yfp-3d-tutorial
 ---
-
+<style>
+  header.site-header {
+    display: none;
+  }
+</style>
 <div style="background-color: rgb(0,79,89); padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; color: white;">
   <div style="display: flex; align-items: center; gap: 15px;">
     <a href="https://cascadiaquakes.org" style="text-decoration: none;">
@@ -12,7 +16,7 @@ slug: yfp-3d-tutorial
   </div>
   <div>
     <a href="https://www.nsf.gov/" style="text-decoration: none;">
-      <img src="images/USNSF_Logo.png" alt="NSF Logo" style="height:40px; vertical-align: middle;">
+      <img src="images/USNSF_Logo.png" alt="NSF Logo" style="height:50px; vertical-align: middle;">
     </a>
   </div>
 </div>
