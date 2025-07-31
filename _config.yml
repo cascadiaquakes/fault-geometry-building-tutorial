@@ -1,12 +1,14 @@
 title: Making 3D fault geometries from cross-sections
 description: This tutorial describes how to create complex 3d fault geometries from geologic map and cross-section data using QGIS, with some plugins created for this purpose.
 theme: just-the-docs
-logo: "/images/Crescent_Logo.png"
-url: "https://cascadiaquakes.org/"
+#logo: "/images/Crescent_Logo.png"
+#url: "https://cascadiaquakes.org/"
 baseurl: /fault-geometry-building-tutorial
 search_enabled: true
 heading_anchors: true
 
 nav_external_links:
+  - title: CRESCENT
+    url: https://cascadiaquakes.org
   - title: NSF
     url: https://nsf.gov

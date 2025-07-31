@@ -2,6 +2,9 @@
 title: Home
 layout: home
 ---
+# Making 3D fault geometries from cross-sections
+
+{:toc}
 
 This tutorial describes how to create complex 3D fault geometries from geologic map and cross-section data using QGIS, with custom plugins created specifically for this purpose.
 In this tutorial, we will use data (geologic mapping and cross-sections) from [a 2018 paper on the Yakima Folds Province by Lydia Staisch][staisch_2018].
