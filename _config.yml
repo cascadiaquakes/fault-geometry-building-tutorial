@@ -1,15 +1,8 @@
-title: "CRESCENT QGIS Plugin Tutorial"
-description: "Generate 3D fault geometries from cross-section data"
+title: Just the Docs Template
+description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
 
-# Optional: If hosted at something like /fault-geometry-building-tutorial/
-# url: https://cascadiaquakes.github.io
-# baseurl: /fault-geometry-building-tutorial
+url: https://just-the-docs.github.io
 
-just_the_docs:
-  heading_anchors: true
-  search_enabled: true
-  # Optional: Add GitHub link to sidebar
-  aux_links:
-    View on GitHub:
-      - https://github.com/cascadiaquakes/fault-geometry-building-tutorial
+aux_links:
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
