@@ -4,10 +4,27 @@ title: ""
 description: ""
 ---
 <style>
-  header.site-header {
-    display: none;
+  #header_wrap,
+  header.inner,
+  #project_title,
+  #project_tagline,
+  #forkme_banner {
+    display: none !important;
+  }
+
+  /* Make content area wider */
+  .wrapper {
+    max-width: none;
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  main.page-content {
+    max-width: 1200px;
+    margin: auto;
   }
 </style>
+
 <div style="background-color: rgb(0,79,89); padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; color: white;">
   <div style="display: flex; align-items: center; gap: 15px;">
     <a href="https://cascadiaquakes.org" style="text-decoration: none;">
