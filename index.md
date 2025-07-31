@@ -15,24 +15,37 @@ description: ""
 
   /* Force your custom header to break free from the inner wrapper */
   .custom-full-header {
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    width: 100vw;
-    background-color: rgb(0, 79, 89);
-    padding: 10px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-  }
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: rgb(0, 79, 89);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
 
    .custom-full-header img {
+     height: 55px;
      border: none;
-     box-shadow: none;
      background: none;
+     box-shadow: none;
+   }
+   
+   .header-center {
+     flex: 1;
+     text-align: center;
+     font-size: 1.4em;
+     font-weight: bold;
+     color: white;
+   }
+   
+   .header-left, .header-right {
+     flex: 0 0 auto;
    }
 
   /* Optional: widen content area too */
@@ -49,15 +62,17 @@ description: ""
 </style>
 
 <div class="custom-full-header">
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <a href="https://cascadiaquakes.org" style="text-decoration: none;">
-      <img src="images/Crescent_Logo.png" alt="CRESCENT Logo" style="height:40px; vertical-align: middle;">
+  <div class="header-left">
+    <a href="https://cascadiaquakes.org">
+      <img src="images/Crescent_Logo.png" alt="CRESCENT Logo" />
     </a>
-    <span style="font-size: 1.4em; font-weight: bold;">Making 3D Fault Geometries from Cross-sections</span>
   </div>
-  <div>
-    <a href="https://www.nsf.gov/" style="text-decoration: none;">
-      <img src="images/USNSF_Logo.png" alt="NSF Logo" style="height:50px; vertical-align: middle;">
+  <div class="header-center">
+    <span>Making 3D Fault Geometries from Cross-sections</span>
+  </div>
+  <div class="header-right">
+    <a href="https://www.nsf.gov/">
+      <img src="images/USNSF_Logo.png" alt="NSF Logo" />
     </a>
   </div>
 </div>
