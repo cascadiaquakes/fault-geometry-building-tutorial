@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: CFM tutorials
-authors: Richard Styron, Loïc Bachelot
+author: Richard Styron, Loïc Bachelot
 logo: Crescent_logo.png
 
 # Force re-execution of notebooks on each build.
