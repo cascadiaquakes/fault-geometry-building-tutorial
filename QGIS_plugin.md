@@ -37,11 +37,11 @@ You can just save these to your hard drive and get to work georeferencing.
 
 You need to install 3 plugins. The easiest way is to download the latest .zip from the release page of the following repo:
 
-[QGIS2ThreeJS](https://github.com/cascadiaquakes/Qgis2threejs) (this version has capabilities to view cross-sections compared to the original plugin)
+[QGIS2ThreeJS](https://github.com/cascadiaquakes/Qgis2threejs/releases/latest) (this version has capabilities to view cross-sections compared to the original plugin)
 
-[Cross-Section Digitizer](https://github.com/cascadiaquakes/cross_section_digitizer)
+[Cross-Section Digitizer](https://github.com/cascadiaquakes/cross_section_digitizer/releases/latest)
 
-[Contours2Mesh](https://github.com/cascadiaquakes/CFM-QGIS-contours2mesh)
+[Contours2Mesh](https://github.com/cascadiaquakes/CFM-QGIS-contours2mesh/releases/latest)
 
 ### Loading the data
 
