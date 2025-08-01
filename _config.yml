@@ -4,7 +4,7 @@
 title: CFM tutorials
 author: Richard Styron, Loïc Bachelot
 logo: Crescent_logo.png
-copyright: © CRESCENT – Cascadia Region Earthquake Science Center.  
+copyright: CRESCENT – Cascadia Region Earthquake Science Center.  
    Open source under the BSD 3-Clause License.
 
 # Force re-execution of notebooks on each build.
