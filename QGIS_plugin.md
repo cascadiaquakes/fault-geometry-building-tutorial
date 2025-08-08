@@ -3,6 +3,9 @@
 This tutorial describes how to create complex 3D fault geometries from geologic map and cross-section data using QGIS, with custom plugins created specifically for this purpose.
 In this tutorial, we will use data (geologic mapping and cross-sections) from [a 2018 paper on the Yakima Folds Province by Lydia Staisch][staisch_2018].
 
+The finished product will look something like this version visible in the 3d viewer here: [http://rocksandwater.net/yfp_3d/](http://rocksandwater.net/yfp_3d)
+
+
 There are 3 steps to this process:
 
 1. First is data preparation. This is pretty simple.
@@ -33,6 +36,12 @@ Below that are two cross-sections, A-A' and B-B'. These are just screen caps, wi
 
 You can just save these to your hard drive and get to work georeferencing.
 
+*update, 8 August 2025*
+
+I've made the georeferenced tif available here, for the sake of expediency:
+
+[staisch_et_al_2018_map.tif](http://rocksandwater.net/uploads/staisch_et_al_2018_map.tif)
+
 ### Plugin Installation
 
 You need to install 3 plugins. The easiest way is to download the latest .zip from the release page of the following repo:
@@ -42,6 +51,8 @@ You need to install 3 plugins. The easiest way is to download the latest .zip fr
 [Cross-Section Digitizer](https://github.com/cascadiaquakes/cross_section_digitizer/releases/latest)
 
 [Contours2Mesh](https://github.com/cascadiaquakes/CFM-QGIS-contours2mesh/releases/latest)
+
+Then, open the 'Manage and Install Plugins...' window from the 'Plugins' menu, and click on 'Install from ZIP' on the left side, and install each.
 
 ### Loading the data
 
@@ -235,6 +246,7 @@ Then, mesh the backthrust with the plugin, and look at it in 2D and 3D to assess
 ![Both faults](/images/both_faults_1.png)
 
 ![Both faults](/images/both_faults_2.png)
+
 
 If you're satisfied with the geometries, you're good to go! Save the files to your format of preference, and move along with your life!
 
